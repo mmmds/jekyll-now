@@ -16,4 +16,11 @@ This result was what I had expected. Cookie contained username, probably without
 4. In my browser I replaced authentication cookie with the new one. As the result I gained access to admin account.
 ![]({{site.baseurl}}/images/padding_oracle_admin.png)
 
+```ruby
+def foo
+  puts 'foo'
+end
+```
+
+
 
