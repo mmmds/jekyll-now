@@ -3,6 +3,9 @@ published: true
 ---
 Our goal is to gain access to admin account by padding oracle attack. Application allows us to register accounts then encrypted cookie is used to authenticate.
 
+
+This VM can be found on [PentesterLab](https://pentesterlab.com/exercises/padding_oracle) or [VulnHub](https://www.vulnhub.com/entry/pentester-lab-padding-oracle,174/)
+
 1. I started with analyzing length of blocks. I registered many accounts increasing their names length. I wrote the [script](https://github.com/mmmds/walkthroughs/blob/master/padding-oracle/register.py) which registers accounts and displays authentication cookie and its size. Starting from 1 character and ending with 20 characters I noticed that block size is 8 bytes.
 ![]({{site.baseurl}}/images/padding_oracle_register.png)
 
