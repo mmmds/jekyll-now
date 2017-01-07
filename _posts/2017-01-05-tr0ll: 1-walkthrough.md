@@ -1,7 +1,10 @@
 ---
 published: true
 ---
-According to VM's description we have to get root and read /root/Proof.txt file. This VM can be found [here](https://www.vulnhub.com/entry/tr0ll-1,100/).
+According to VM's description we have to get root and read /root/Proof.txt file. 
+
+
+This VM can be found [here](https://www.vulnhub.com/entry/tr0ll-1,100/).
 
 1. First thing after running VM was to get its IP address. I used nmap to examine my local network.
 ![]({{site.baseurl}}/images/tr0ll1_1.png)
