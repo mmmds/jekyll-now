@@ -62,7 +62,9 @@ It's similar to Error SQL Injection but this time there is no result from query.
 ![]({{site.baseurl}}/images/dvws_blind_2.png)
 
 ## Command Execution
+
 ## Reflected XSS
+
 ## Stored XSS
 These vulnerabilities are nothing special in comparison with DVWA. Standard payloads work for them.
 
