@@ -21,7 +21,9 @@ In result I got login and password "YWRtaW4=" what decodes to "admin"
 ![]({{site.baseurl}}/images/dvws_brute_force_1.png)
 
 ## CSRF
-There is no CSRF protection, so I prepared [website](https://github.com/mmmds/walkthroughs/blob/master/dvws/csrf.html) with script which will connect to WebSocket and send password change request. Request consists of JSON with two password fields. Second field 'cpass' is not even checked, so we can skip it. Victim must be logged in, otherwise they will get error "Message Authenticated session is required for changing password.".
+There is no CSRF protection, so I prepared [website](https://github.com/mmmds/walkthroughs/blob/master/dvws/csrf.html) with script which will connect to WebSocket and send password change request. Request consists of JSON with two password fields. Second field 'cpass' is not even checked, so we can skip it. Victim must be logged in, otherwise they will get error 
+	
+    "Message Authenticated session is required for changing password.".
 
 ## File Inclusion
 In request filename to display is sent. I used Owasp ZAP to intercept request and put filename I wanted to display.
