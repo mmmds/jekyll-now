@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 DVWS is similar to Damn Vulnerable Web Application, but communication between client and server is based on WebSockets. Source code is available [here](https://github.com/interference-security/DVWS) , but it's much easier to use prepared [Docker image](https://hub.docker.com/r/tssoffsec/dvws/).
 
@@ -69,4 +69,3 @@ These vulnerabilities are nothing special in comparison with DVWA. Standard payl
 	127.0.0.1; cat /etc/passwd
 
 	<img src=x onerror="alert(1)">
-
