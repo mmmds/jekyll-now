@@ -67,7 +67,9 @@ Configuration consists of two files, /etc/dnsmasq.conf
 and /etc/dnsmasq.hosts
 
 	192.0.2.1 example.com
-    
+
+# 
+
 	$ dnsmasq -C /etc/dnsmasq.conf
     
 The last step was to change router's DNS to set up server's IP in administration panel. From that moment traffic from every device connected to attacker's WiFi was logged.
