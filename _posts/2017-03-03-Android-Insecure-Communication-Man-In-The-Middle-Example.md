@@ -3,12 +3,12 @@ published: false
 ---
 I chose one application in Google Play to test. Its main functionalities were focused on consuming a RESTful web service. I decompiled this application using tools dex2jar and JD-GUI. Firstly I connected my phone to computer to get apk file
 
-	$ adb pull /data/app/com.example.app.apk
+	$ adb pull /data/app/com.example.app-1.apk
 
 Then I converted apk into jar and ran decompiler
 
-	$ ./d2j-dex2jar.sh com.example.app.apk -o app.jar
-	dex2jar com.example.app.apk -> app.jar
+	$ ./d2j-dex2jar.sh com.example.app-1.apk -o app.jar
+	dex2jar com.example.app-1.apk -> app.jar
 
 	$ java -jar jd-gui-1.4.0.jar app.jar
 
