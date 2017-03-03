@@ -91,7 +91,3 @@ The last step was to change router's DNS to set up server's IP in administration
 	Transfer-Encoding: chunked
 	Connection: keep-alive
 	Set-Cookie: JSESSIONID=A163B20D3696AF6185C07CD62EBA4B05
-    
-
-
-
