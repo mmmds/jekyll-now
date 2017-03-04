@@ -7,7 +7,7 @@ Continuing analysis of application from [previous post](https://mmmds.github.io/
       {
         private String sessionId;
 
-        public WriteTask(String paramString1)
+        public SessionWriterTask(String paramString1)
         {
           this.sessionId = paramString1;
         }
