@@ -28,11 +28,21 @@ Continuing analysis of application from [previous post](https://mmmds.github.io/
         }
       }
       
-File's absolute path is /data/data/com.example.app/files/session.txt. On rooted device such file can be accessed without any problem, but on unrooted device we don't have permission to read it. I found some solution which involves making a backup and then unpacking it on computer.
+File's absolute path is /data/data/com.example.app/files/session.txt. On rooted device such file can be accessed without any problem, but on unrooted device we don't have permission to read it. I found some solution which involves making a backup and then unpacking it on a computer.
 
-$ adb backup -noapk com.example.app
+	$ adb backup -noapk com.example.app
 
 Device prompt me for password for backup (on unencrypted devices it's possible to skip) and then backup.ab file appeared on my computer. 
+I used [Android Backup Extractor](https://sourceforge.net/projects/adbextractor/) to decrypt and unpack backup.
+
+	$ java -jar abe.jar unpack backup.ab backup.tar b4ckupp4ssw0rd
+    $ tar -xf backup.tar
+   
+After this step I was able to read content of session.txt file and get sessionId.
+
+	$ cat apps/com.example.app/f/session.txt
+    A163B20D3696AF6185C07CD62EBA4B05
+
 
 
 
