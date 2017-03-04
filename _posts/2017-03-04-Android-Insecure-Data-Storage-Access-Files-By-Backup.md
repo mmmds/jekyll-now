@@ -32,7 +32,7 @@ File's absolute path is /data/data/com.example.app/files/session.txt. On rooted 
 
 	$ adb backup -noapk com.example.app
 
-Device prompt me for password for backup (on unencrypted devices it's possible to skip) and then backup.ab file appeared on my computer. 
+Device prompt me for password for backup (on unencrypted devices it's possible to skip it) and then backup.ab file appeared on my computer. 
 I used [Android Backup Extractor](https://sourceforge.net/projects/adbextractor/) to decrypt and unpack backup.
 
 	$ java -jar abe.jar unpack backup.ab backup.tar b4ckupp4ssw0rd
