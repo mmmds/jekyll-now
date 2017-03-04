@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 Continuing analysis of application from [previous post](https://mmmds.github.io/Android-Insecure-Communication-Man-In-The-Middle-Example/) I found that sessionId is held in local file.
 
@@ -42,7 +42,3 @@ After this step I was able to read content of session.txt file and get sessionId
 
 	$ cat apps/com.example.app/f/session.txt
     A163B20D3696AF6185C07CD62EBA4B05
-
-
-
-
