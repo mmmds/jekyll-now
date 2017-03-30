@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-I chose one application in Google Play to test. Its main functionalities were focused on consuming a RESTful web service. I decompiled this application using tools dex2jar and JD-GUI. Firstly I connected my phone to computer to get apk file
+I chose one application in Google Play to test. Its main functionalities were focused on consuming a RESTful web service. I decompiled this application using tools dex2jar and JD-GUI. Firstly, I connected my phone to computer to get apk file
 
 	$ adb pull /data/app/com.example.app-1.apk
 
@@ -37,10 +37,10 @@ During code analysis I found some interesting piece which made me think that app
     	}
 	}
     
-To prove it I ran Burp Suite and set up proxy on my phone. It was important to not install Burp's CA certificate. Web browser started to show warning when I was trying to load any page through HTTPS, but my application was connecing to web service without any problems.
+To prove it, I ran Burp Suite and set up proxy on my phone. It was important not to install Burp's CA certificate. Web browser started to show warning when I was trying to load any page through HTTPS, but my application was connecing to web service without any problems.
 I decided to exploit this vulnerability and peform Man-in-the-middle attack by setting up proxy between target's mobile device and web service.
 
-I started with [proxy](https://github.com/mmmds/walkthroughs/blob/master/proxy.php) which I wrote in PHP and ran on Apache. It passes requests to legitimate web service and returns response from it slightly modifying headers to make whole communication readable. Apache required rewriting rule to redirect every URL to this script and self-signed SSL certificate.
+I started with [proxy](https://github.com/mmmds/walkthroughs/blob/master/proxy.php) which I wrote in PHP and ran on Apache. It passes requests to legitimate web service and returns response from it slightly modifying headers to make the whole communication readable. Apache required rewriting rule to redirect every URL to this script and self-signed SSL certificate.
 
 	<VirtualHost *:443>
 		ServerName evil.com
