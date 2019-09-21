@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 Continuing analysis of application from [previous post](https://mmmds.github.io/Android-Insecure-Communication-Man-In-The-Middle-Example/) I found that sessionId is held in local file.
 

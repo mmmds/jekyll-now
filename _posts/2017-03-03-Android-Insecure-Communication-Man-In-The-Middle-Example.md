@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 I chose one application in Google Play to test. Its main functionalities were focused on consuming a RESTful web service. I decompiled this application using tools dex2jar and JD-GUI. Firstly, I connected my phone to computer to get apk file
 

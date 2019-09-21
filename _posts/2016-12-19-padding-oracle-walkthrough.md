@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 Our goal is to gain access to admin account by padding oracle attack. Application allows us to register accounts then encrypted cookie is used to authenticate.
 

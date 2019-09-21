@@ -5,10 +5,4 @@ permalink: /about/
 published: true
 ---
 
-I am Java and JavaScript developer fascinated by IT security. This blog consist of vulnerable machines walkthroughs and descriptions of techniques that I learn.
-
-
-
-### Contact me
-
-[michal.dardas@gmail.com](mailto:michal.dardas@gmail.com)
+[email](mailto:mmmdspl@gmail.com)

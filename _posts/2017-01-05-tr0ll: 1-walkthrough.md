@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 According to VM's description, we have to get root and read /root/Proof.txt file. 
 

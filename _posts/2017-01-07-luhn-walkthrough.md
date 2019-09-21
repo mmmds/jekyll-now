@@ -1,5 +1,6 @@
 ---
 published: true
+layout: post
 ---
 In this exercise we have credit card checking web application to exploit. It takes cred card number and returns information whether our card is compromised or not.
 
